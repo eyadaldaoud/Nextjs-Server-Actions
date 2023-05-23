@@ -1,18 +1,23 @@
 import React from "react";
 import Theme from "./Theme";
 import { IoLogoVercel } from "react-icons/io5";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <div>
       <nav className="bg-white border-gray-200 dark:bg-black border-b-2 dark:border-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="https://flowbite.com/" className="flex items-center">
+          <Link
+            href={"https://vercel.com"}
+            target="_blank"
+            className="flex items-center"
+          >
             <IoLogoVercel className="text-3xl" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Vercel
             </span>
-          </a>
+          </Link>
           <div className="flex items-center md:order-2">
             <Theme />
           </div>
