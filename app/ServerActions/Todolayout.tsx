@@ -4,11 +4,14 @@ import Delete from "./Delete";
 import Complete from "./Complete";
 
 const Todolayout: any = async () => {
-  const querySnapshot = await getDocs(collection(db, "todos"));
-  const docs: any = querySnapshot.docs;
+  const querySnapshot = await getDocs(collection(db, "todos")).catch((err) =>
+    console.log(err)
+  );
+  const docs: any = querySnapshot?.docs;
+
   return (
     <div className="flex flex-wrap gap-3 m-4 p-4 justify-center">
-      {docs.map((doc: any) => (
+      {docs?.map((doc: any) => (
         <div
           key={doc.id}
           className="max-w-xs overflow-hidden bg-slate-200 rounded-lg shadow-lg dark:bg-gray-900"
